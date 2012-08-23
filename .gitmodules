@@ -1,0 +1,9 @@
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt.git
+[submodule "cookbooks/git"]
+	path = cookbooks/git
+	url = https://github.com/opscode-cookbooks/git.git
+[submodule "cookbooks/silkjs"]
+	path = cookbooks/silkjs
+	url = https://github.com/obscurerichard/chef-silkjs.git

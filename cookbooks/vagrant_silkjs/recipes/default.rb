@@ -19,17 +19,22 @@ end
 include_recipe "git"
 
 silkjs_src = node[:vagrant_silkjs][:src]
+silkjs_user = node[:vagrant_silkjs][:user]
+silkjs_git = node[:vagrant_silkjs][:git]
+silkjs_readme = silkjs_src + File::Separator + "README.md"
 
 
 bash "clone_silkjs" do
-  cwd Etc.getpwuid.dir
-  code <<-EOH
-    if [ ! -d #{silkjs_src} ]; then
-      git clone https://github.com/mschwartz/SilkJS.git #{silkjs_src}
-    else
-      cd #{silkjs_src} && git pull
-    fi
-  EOH
+  cwd Etc.getpwnam(silkjs_user).dir
+  user silkjs_user
+  code "git clone #{silkjs_git} #{silkjs_src} 2>&1 | logger -t silkjs"
+  not_if {File.exists?(silkjs_readme)}
+end
+
+bash "update_silkjs" do
+  cwd silkjs_src
+  user silkjs_user
+  code "git pull 2>&1 | logger -t silkjs"
 end
 
 include_recipe 'silkjs'

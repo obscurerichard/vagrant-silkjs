@@ -19,6 +19,4 @@
 
 require 'etc'
 
-default[:vagrant_silkjs][:src] = Etc.getpwuid.dir + File::SEPARATOR + "SilkJS"
-default[:vagrant_silkjs][:user] = "root"
-default[:vagrant_silkjs][:git] = "https://github.com/mschwartz/SilkJS.git"
+default[:silkjs][:git] = "https://github.com/mschwartz/SilkJS.git"

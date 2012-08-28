@@ -18,9 +18,9 @@ if platform?("debian", "ubuntu")
 end
 include_recipe "git"
 
-silkjs_src = node[:vagrant_silkjs][:src]
-silkjs_user = node[:vagrant_silkjs][:user]
-silkjs_git = node[:vagrant_silkjs][:git]
+silkjs_src = node[:silkjs][:src]
+silkjs_user = node[:silkjs][:user]
+silkjs_git = node[:silkjs][:git]
 silkjs_readme = silkjs_src + File::Separator + "README.md"
 
 

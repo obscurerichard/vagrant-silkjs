@@ -31,6 +31,15 @@ If this works, you can ssh into the box and use the silkjs interactive REPL:
     vagrant ssh
     silkjs
 
+To run the web server, do this, once you have done a 'vagrant ssh' to get into the box:
+
+    cd /vagrant
+    ./run.sh
+
+The system will then serve files from /vagrant/docroot.
+
+### Troubleshooting 
+
 If you have cloned the repository, but nothing appears under the
 cookbooks/silkjs directory, you may need to do this to pull in the git
 submodules:

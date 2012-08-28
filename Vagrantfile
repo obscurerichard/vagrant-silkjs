@@ -4,12 +4,12 @@
 Vagrant::Config.run do |config|
 
   # Pick a box
-  config.vm.box = "base"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  #config.vm.box = "base"
+  #config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
   #config.vm.box = "lucid64"
   #config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
-  #config.vm.box = "precise32"
-  #config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box = "precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   #config.vm.box = "precise64"
   #config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 

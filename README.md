@@ -36,7 +36,8 @@ To run the web server, do this, once you have done a 'vagrant ssh' to get into t
     cd /vagrant
     ./run.sh
 
-The system will then serve files from /vagrant/docroot.
+The system will then serve files from /vagrant/docroot. View them from your workstation at [http://localhost:29090/](http://localhost:29090/).
+
 
 ### Troubleshooting 
 

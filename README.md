@@ -50,6 +50,10 @@ submodules:
 
 Then try doing `vagrant up` again.
 
+### Cloud operation
+
+These recipes can also be used to install SilkJS quickly on an Ubuntu 10.04 or 12.04 cloud host (such as an Amazon EC2 host) that has Chef Solo installed on it. Run 'cloud/provision.sh' to provision SilkJS using Chef Solo.
+
 License
 -------
 

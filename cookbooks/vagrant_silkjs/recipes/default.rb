@@ -21,18 +21,27 @@ silkjs_user = node[:silkjs][:user]
 silkjs_git = node[:silkjs][:git]
 silkjs_readme = silkjs_src + File::Separator + "README.md"
 
+# Bash trick with "set -o pipefail" courtesy of Stack Overflow
+# Question:
+#  http://stackoverflow.com/questions/985876/tee-and-exit-status
+# Question asked by pachanga:
+#  http://stackoverflow.com/users/47422/pachanga
+# Answered by Ville Laurikari:
+#  http://stackoverflow.com/users/7446/ville-laurikari
+# Answer: 
+#  http://stackoverflow.com/a/999259
 
 bash "clone_silkjs" do
   cwd Etc.getpwnam(silkjs_user).dir
   user silkjs_user
-  code "git clone #{silkjs_git} #{silkjs_src} 2>&1 | logger -t silkjs"
+  code "set -o pipefail; git clone #{silkjs_git} #{silkjs_src} 2>&1 | logger -t silkjs"
   not_if {File.exists?(silkjs_readme)}
 end
 
 bash "update_silkjs" do
-  cwd silkjs_src
+  cwd Etc.getpwnam(silkjs_user).dir
   user silkjs_user
-  code "git pull 2>&1 | logger -t silkjs"
+  code "set -o pipefail; cd #{silkjs_src} 2>&1 && git pull 2>&1 | logger -t silkjs"
 end
 
 include_recipe 'silkjs'

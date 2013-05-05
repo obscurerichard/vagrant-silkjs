@@ -11,16 +11,14 @@
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-require 'etc'
-
 if platform?("debian", "ubuntu")
   include_recipe "apt"
 end
 include_recipe "git"
 
-silkjs_src = node[:vagrant_silkjs][:src]
-silkjs_user = node[:vagrant_silkjs][:user]
-silkjs_git = node[:vagrant_silkjs][:git]
+silkjs_src = node[:silkjs][:src]
+silkjs_user = node[:silkjs][:user]
+silkjs_git = node[:silkjs][:git]
 silkjs_readme = silkjs_src + File::Separator + "README.md"
 
 

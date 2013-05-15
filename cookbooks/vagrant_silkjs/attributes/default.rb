@@ -17,6 +17,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'etc'
-
-default[:silkjs][:git] = "https://github.com/mschwartz/SilkJS.git"
+default[:silkjs][:git] = "https://github.com/obscurerichard/SilkJS.git"
+#default[:silkjs][:git] = "https://github.com/mschwartz/SilkJS.git"

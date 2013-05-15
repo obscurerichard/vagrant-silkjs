@@ -1,2 +1,2 @@
-# Serve documents from the docroot directory
+// Serve documents from the docroot directory
 Config.documentRoot = 'docroot';

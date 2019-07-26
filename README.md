@@ -1,7 +1,10 @@
-Vagrant Template for SilkJS
+Vagrant Template for SilkJS - WARNING - Archived and unmaintained
 ===========================
 
 by Richard Bullington-McGuire <richard@moduscreate.com>
+
+This project has been archived and is no longer actively maintained. Use at your own risk.
+
 
 Description
 -----------
